@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Introduction to Openshift - Aman Lalpuria</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+        type='text/css'>
+    <link
+        href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+        rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="/css/clean-blog.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Aman Lalpuria</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/post.html">Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/openshift.png')">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="post-heading">
+                        <h1>Introduction to Openshift</h1>
+                        <!-- <h2 class="subheading">Problems look mighty small from 150 miles up</h2> -->
+                        <span class="meta">Posted by
+                            <a href="#">Aman Lalpuria</a>
+                            on March 4, 2020</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <h2>What is Openshift?</h2>
+                    <p> Maven is devops tool Maven is devops tool Maven is devops tool Maven is devops tool Maven is
+                        devops tool Maven is devops tool
+                        Maven is devops tool Maven is devops tool v Maven is devops tool
+                    </p>
+                    <h2>Operators</h2>
+                    <p>A convenient way to deploy application and software component for your application to use that
+                        leverage the container platform.
+                    </p>
+                    <ul>
+                        <li><code> oc login "clusterURL"</code> - Before interacting with a cluster, most
+                            operations require a logged-in user</li>
+                        <li><code> oc new-app</code> - is a powerful command that can create and run a
+                            containerized application based on an image, a Git repository, or both</li>
+                        <li><code> oc get</code> - command allows user to get information about different
+                            OpenShift resources.</li>
+                        <li><code> oc get pods</code> - returns all the running pods</li>
+                        <li><code> oc get all</code> - print out the summary of resource type</li>
+                        <li><code> oc describe</code> - provides additional information about a particular
+                            resource.</li>
+                        <li><code> oc export</code> - will export a resource into a YAML definition file </li>
+                        <li><code> oc delete</code> - remove a resource from the OCP cluster</li>
+                        <li><code> oc exec</code> - allows user to execute commands inside a container</li>
+
+                    </ul>
+                    <h2>OpenShift Deployment</h2>
+                    <ul>
+                        <li>Write a Dockerfile</li>
+                        <li>Build Docker Image</li>
+                        <li>Create new project to Openshift</li>
+                        <li>Create new app to the Project</li>
+                        <li>Create Route</li>
+                        <li>Project Deployed</li>
+                    </ul>
+                    <h3>1. Write Dockerfile</h3>
+                    <p> Prior knowledge of Docker</p>
+                    <pre id="code"><code>
+                    FROM centos:latest
+MAINTAINER Aman Lalpuria<amanlalpuria@aol.com>
+LABEL description="A custom image for redis server for single master"
+RUN mkdir -p /redis
+WORKDIR /redis
+RUN curl -o redis.tar.gz http://download.redis.io/releases/redis-5.0.8.tar.gz && \
+    tar -xvf redis.tar.gz
+WORKDIR /redis/redis-5.0.8
+RUN make && \
+    src/redis-server
+ENTRYPOINT src/redis-cli
+EXPOSE 6379
+              </code></pre>
+                    <h3>2. Build Docker Image</h3>
+                    <p> Docker image can be build using docker command</p>
+                    <pre id="code"><code>
+                        docker build -t redis-server .
+                      </code></pre>
+                    <p> docker build is the command to build the Dockerfile</p>
+                    <p> <code id="hashtag">-t</code> to name the docker image in the above command we have named
+                        "redis-server"</p>
+                    <p> <code id="hashtag">.</code> to select the present directory, it tells from where to fetch the
+                        Dockerfile</p>
+                    <h3>3. Creating Routes</h3>
+                    <p>While services allow for network access between pods inside an OCP instance, routes allow for
+                        network access to pods from users and applications outside the OCP instance.
+
+                        A route connects a public facing IP address and DNS hostname to an internal facing IP address
+                        provided by a service.
+
+                        Routes are implemented by a shared router service that run as pods inside the OCP instance and
+                        can be scaled and replicated like any other pod.</p>
+                    <h4>Sample Route</h4>
+                    <pre id="code"><code>
+                        {
+"apiVersion":"v1",
+"kind":"Route",
+"metadata":{
+    "name":"quoteapp"
+},
+"spec":{
+    "host":"quoteapp.apps.example.com"
+    "to":{
+        "kind":"Service"
+        "name":"quoteapp"
+    }
+}
+}
+          </code></pre>
+
+                    <p>Use the <code>oc create</code> command to create route resources. (and just pass the json)</p>
+
+                    <p>The <code>oc new-app </code> command does not create a route when building a pod from container
+                        images,
+                        Dockerfile, or application source code.</p>
+
+                    <p>Another way to create a route is to use the oc expose service command, passing a service resource
+                        name as the input. -The --name option can be used to control the name of the route resource</p>
+                    <pre id="code"><code>oc expose service quotedb --name quoteapp</code></pre>
+                    <p>By default, routes created by oc expose generate DNS names of the form:</p>
+                    <pre id="code"><code>route-name-project-name.default-domain</code></pre>
+
+                    <h4>Demonstration</h4>
+                    <p>To expose route for the service</p>
+
+                    <pre id="code"><code></code>oc expose service mysql-openshift</code></pre>
+
+                    <p>To get detail information about routes</p>
+
+                    <pre id="code"><code></code>oc describe route mysql-openshift</code></pre>
+   
+                    <p>To delete the route</p>
+
+                    <pre id="code"><code></code>oc delete route/mysql-openshift</code></pre>
+
+                    <p>To name the route</p>
+
+                    <pre id="code"><code></code>oc expose svc/mysql-openshift --name=mysql-route</code></pre>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item">
+                            <a href="https://twitter.com/AmanSharma163">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://www.facebook.com/profile.php?id=100001852345309">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://github.com/aman7797/">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="linkedin.com/in/aman-lalpuria-9949755b/">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; Aman Lalpuria Website 2020</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="/js/clean-blog.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $(document.body).find("pre code").each(function () {
+                $(this).html($.trim($(this).html()));
+            });
+        });
+    </script>
+</body>
+
+</html>
