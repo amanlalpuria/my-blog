@@ -1,2 +1,3 @@
-# my-blog
-My Blog
+# My Blog 
+
+Made using BootStrap - 
