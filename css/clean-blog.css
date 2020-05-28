@@ -4,7 +4,7 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-clean-blog/blob/master/LICENSE)
  */
 
- body {
+body {
   font-size: 20px;
   color: #212529;
   font-family: 'Lora', 'Times New Roman', serif;
@@ -17,10 +17,6 @@ p {
 
 p a {
   text-decoration: underline;
-}
-
-p.small {
-  line-height: 0.7;
 }
 
 h1,
