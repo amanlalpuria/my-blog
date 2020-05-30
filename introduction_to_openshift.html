@@ -24,6 +24,18 @@
     <!-- Custom styles for this template -->
     <link href ="css/clean-blog.min.css" rel="stylesheet">
 
+    <style>
+        #code {
+          text-align: left;
+          font-size: 100%;
+          background: #F6F8FA;
+          border-radius: 10px;
+          padding-left: 15px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+
+        }
+      </style>
 </head>
 
 <body>
@@ -120,6 +132,7 @@
                     <h3>1. Write Dockerfile</h3>
                     <p> Prior knowledge of Docker</p>
                     <pre id="code"><code>
+
                     FROM centos:latest
 MAINTAINER Aman Lalpuria<amanlalpuria@aol.com>
 LABEL description="A custom image for redis server for single master"
@@ -131,8 +144,7 @@ WORKDIR /redis/redis-5.0.8
 RUN make && \
     src/redis-server
 ENTRYPOINT src/redis-cli
-EXPOSE 6379
-              </code></pre>
+EXPOSE 6379</code></pre>
                     <h3>2. Build Docker Image</h3>
                     <p> Docker image can be build using docker command</p>
                     <pre id="code"><code>
