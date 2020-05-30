@@ -24,6 +24,15 @@
     <!-- Custom styles for this template -->
     <link href="css/clean-blog.min.css" rel="stylesheet">
 
+    <style>
+        code {
+            font-family: Consolas, "courier new";
+            color: rgb(5, 5, 5);
+            background-color: #f1f1f1;
+            background-position-y: 60px;
+            font-size: 100%;
+        }
+    </style>
 </head>
 
 <body>
@@ -61,7 +70,7 @@
     </nav>
 
     <!-- Page Header -->
-    <header class="masthead" style="background-image: url('/img/post-bg.jpg')">
+    <header class="masthead" style="background-image: url('img/bg/haskell_memory_3.jpg')">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
@@ -84,16 +93,56 @@
             <div class="row">
                 <div class="col-lg-8 col-md-10 mx-auto">
                     <h2>Introduction to Haskell</h2>
-                    <p>haskell bla bla bla haskell bla bla bla haskell bla bla bla haskell bla bla bla haskell bla bla
-                        bla haskell bla bla bla haskell bla bla bla
-                        haskell bla bla bla haskell bla bla bla haskell bla bla bla haskell bla bla bla haskell bla bla
-                        bla haskell bla bla bla v haskell bla bla bla
-                        haskell bla bla bla haskell bla bla bla haskell bla bla bla haskell bla bla bla
+                    <p>Haskell is a modern, standard, non-strict, purely-functional programming language. It provides
+                        all the features sketched above, including polymorphic typing, lazy evaluation and higher-order
+                        functions. It also has an innovative type system which supports a systematic form of overloading
+                        and a module system.
                     </p>
+                    <ul>
+                        <li>Purely Functional</li>
+                        <ul>
+                            <li>Function are values</li>
+                            <li>Values never change</li>
+                        </ul>
+                        <li>Lazy</li>
+                        <li>Statically Typed</li>
+                    </ul>
 
-                    <h2>Setup Haskell</h2>
-                    <p>1. Download Haskell Platform from <a href="https://www.haskell.org/platform/prior.html"> Haskell
-                            Website.</a></a></p>
+                    <h2>Why Haskell</h2>
+                    <ul>
+                        <li>Not Difficult, just Different</li>
+                        <li>Come from Mathematics theory</li>
+                        <li>Patient development</li>
+                        <li>Strong theoretical roots</li>
+                        <li>Fosters innovation</li>
+                        <li>Industrial Strength</li>
+                        <li>Performance</li>
+                        <li>Libraries</li>
+                    </ul>
+
+                    <h2>History</h2>
+                    <ul>
+                        <li>Introduce in 1990.</li>
+                        <li>Glorious Glasgow Haskell Compilation(GHC)</li>
+                    </ul>
+                    <h2>Setup Haskell on Windows</h2>
+                    <p>1. To download Haskell Stack<a
+                            href="https://get.haskellstack.org/stable/windows-x86_64-installer.exe">
+                            Click Here.</a></a></p>
+                    <p>2. Run the downloaded file</p>
+                    <p>3. To use GHCI</p>
+                    <pre><code class="haskell">stack ghci</code></pre>
+                    <p>4. To create new project</p>
+                    <pre><code class="haskell">stack new my-project</code></pre>
+                    <p>5. Change directory to project directory</p>
+                    <pre><code class="haskell">cd my-project</code></pre>
+                    <p>6. Setup Project</p>
+                    <pre><code class="haskell">stack setup</code></pre>
+                    <p>7. Build Project</p>
+                    <pre class = "code"><code class="code">stack build</code></pre>
+                    <p>8. To execute the commmand </p>
+                    <pre><code class="haskell">stack exec my-project-exe</code></pre>
+
                 </div>
             </div>
         </div>
@@ -152,6 +201,7 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/clean-blog.min.js"></script>
+
 
     <script>
         $(document).ready(function () {
