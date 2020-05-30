@@ -25,18 +25,14 @@
   <link href="css/clean-blog.min.css" rel="stylesheet">
 
   <style>
-    code {
-      font-family: Consolas, "courier new";
-      color: rgb(5, 5, 5);
-      background-color: #f1f1f1;
-      font-size: 105%;
-      margin: 0px;
-      padding: 20px;
-      border: 10px;
-      border-radius: 15px;
+    #code {
+      text-align: left;
+      font-size: 100%;
+      background: #F6F8FA;
+      border-radius: 10px;
+      padding: 0px -10px;
     }
   </style>
-
 </head>
 
 <body>
@@ -74,8 +70,13 @@
   </nav>
 
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url('img/maven.png')">
-    <div class="overlay"></div>
+  <header class="masthead" style="background-image: url('img/maven.png');
+ background-repeat: no-repeat;
+background-position: center center;
+background-attachment: fixed;
+background-size: 100%;">
+    <div class=" overlay">
+    </div>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
@@ -179,38 +180,12 @@
             value as the copied address</p>
           <p id="64b9">12. Then find the <code id="hashtag">path</code> in System Variable, Click Edit</p>
           <p id="1ba8">13. Click New, paste the address copied last and Click Ok</p>
-          <!-- <figure class="il im in io ip en dq dr paragraph-image">
-            <div class="fe ff dw fg ai">
-              <div class="dq dr jn">
-                <div class="fm r dw fn">
-                  <div class="jo fp r">
-                    <div class="fh fi s t u fj ai av fk fl"> -->
-          <!-- <img class="s t u fj ai fq fr fs" src="img/0_lA8II4IvWF9TjKlBq=20.png" width="1151" height="589"
-                        role="presentation" /></div><img class="fh fi s t u fj ai ft" width="1151" height="589"
-                      srcSet="img/0_lA8II4IvWF9TjKlB256w.png 276w, img/0_lA8II4IvWF9TjKlB552w.png 552w, img/0_lA8II4IvWF9TjKlB640w.png 640w, img/0_lA8II4IvWF9TjKlB700w.png 700w"
-                      sizes="700px" role="presentation" /> -->
-          <!-- <noscript><img class="s t u fj ai"
-                        src="https://miro.medium.com/max/2302/0*lA8II4IvWF9TjKlB.png" width="1151" height="589"
-                        srcSet="https://miro.medium.com/max/552/0*lA8II4IvWF9TjKlB.png 276w, https://miro.medium.com/max/1104/0*lA8II4IvWF9TjKlB.png 552w, https://miro.medium.com/max/1280/0*lA8II4IvWF9TjKlB.png 640w, https://miro.medium.com/max/1400/0*lA8II4IvWF9TjKlB.png 700w"
-                        sizes="700px" role="presentation" /></noscript> -->
+
 
           <img
             srcset=" img/0_lA8II4IvWF9TjKlB552w.png 552w, img/0_lA8II4IvWF9TjKlB640w.png 640w, img/0_lA8II4IvWF9TjKlB700w.png 700w"
             src="img/0_lA8II4IvWF9TjKlBq=20.png" sizes="475px">
 
-          <!-- <picture>
-                        <source media="(min-width:552px)" srcset="img/0_lA8II4IvWF9TjKlB552w.png">
-                        <source media="(min-width:640px)" srcset="img/0_lA8II4IvWF9TjKlB640w.png">
-                        <source media="(min-width:700px)" srcset="img/0_lA8II4IvWF9TjKlB700w.png">
-
-                        <img src="img/0_lA8II4IvWF9TjKlBq=20.png" alt="Flowers" style="width:auto;" sizes="700px"
-                          role="presentation">
-                      </picture> -->
-
-          <!-- </div>
-                  </div>
-                </div>
-              </div> -->
           </figure>
           <p id="31d9">14. Now open a fresh Command Prompt</p>
           <p id="9575">15. Now try
@@ -290,13 +265,6 @@
   <!-- Custom scripts for this template -->
   <script src="js/clean-blog.min.js"></script>
 
-  <script>
-    $(document).ready(function () {
-      $(document.body).find("pre code").each(function () {
-        $(this).html($.trim($(this).html()));
-      });
-    });
-  </script>
 
 </body>
 
