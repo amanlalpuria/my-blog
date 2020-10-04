@@ -25,12 +25,15 @@
     <link href="css/clean-blog.min.css" rel="stylesheet">
 
     <style>
-        code {
-            font-family: Consolas, "courier new";
-            color: rgb(5, 5, 5);
-            background-color: #f1f1f1;
-            background-position-y: 60px;
-            font-size: 100%;
+        #code {
+          text-align: left;
+          font-size: 100%;
+          background: #F6F8FA;
+          border-radius: 10px;
+          padding-left: 15px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+
         }
     </style>
 </head>
@@ -131,17 +134,17 @@
                             Click Here.</a></a></p>
                     <p>2. Run the downloaded file</p>
                     <p>3. To use GHCI</p>
-                    <pre><code class="haskell">stack ghci</code></pre>
+                        stack ghci</code></pre>
                     <p>4. To create new project</p>
-                    <pre><code class="haskell">stack new my-project</code></pre>
+                    <pre id="code"><code>stack new my-project</code></pre>
                     <p>5. Change directory to project directory</p>
-                    <pre><code class="haskell">cd my-project</code></pre>
+                    <pre id="code"><code>cd my-project</code></pre>
                     <p>6. Setup Project</p>
-                    <pre><code class="haskell">stack setup</code></pre>
+                    <pre id="code"><code>stack setup</code></pre>
                     <p>7. Build Project</p>
                     <pre class = "code"><code class="code">stack build</code></pre>
                     <p>8. To execute the commmand </p>
-                    <pre><code class="haskell">stack exec my-project-exe</code></pre>
+                    <pre id="code"><code>stack exec my-project-exe</code></pre>
 
                 </div>
             </div>
@@ -157,7 +160,7 @@
                 <div class="col-lg-8 col-md-10 mx-auto">
                     <ul class="list-inline text-center">
                         <li class="list-inline-item">
-                            <a href="https://twitter.com/AmanSharma163">
+                            <a href="https://twitter.com/amanlalpuria">
                                 <span class="fa-stack fa-lg">
                                     <i class="fas fa-circle fa-stack-2x"></i>
                                     <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
